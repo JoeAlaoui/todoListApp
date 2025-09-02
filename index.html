@@ -1,84 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script defer src="script.js"></script>
     <title>ToDo List App - HTML, CSS & JS</title>
 </head>
+
 <body>
+    <h1>ToDo List App</h1>
     <div class="wrapper">
-        <div class="task-input">
-            <img src="bars-icon.svg" alt="icon">
-            <input type="text" placeholder="Add a new task">
-            </div>  
+        <form>
+            <input id="todo-input" type="text" placeholder="Add a new task" autocomplete="off">
+            <button id="add-button">ADD</button>
+        </form>
+        <ul id="todo-list">
+            <li class="todo">
+                <input type="checkbox" id="todo-1">
+                <label for="todo-1" class="custom-checkbox">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="transparent">
+                        <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                    </svg>
+                </label>
+                <label for="todo-1" class="todo-text">Pay electricity bill</label>
+                <button class="delete-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="var(--secondary-color)">
+                        <path
+                            d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                    </svg>
+                </button>
+            </li>
+            <li class="todo">
+                <input type="checkbox" id="todo-2">
+                <label for="todo-2" class="custom-checkbox">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="transparent"></svg>
+                        <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                    </svg>
+                </label>
+                <label for="todo-2" class="todo-text">Pay electricity bill</label>
+                <button class="delete-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="var(--secondary-color)">
+                        <path
+                            d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                    </svg>
+                </button>
+            </li>
+            <li class="todo">
+                <input type="checkbox" id="todo-3">
+                <label for="todo-3" class="custom-checkbox">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="transparent">
+                        <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                    </svg>
+                </label>
+                <label for="todo-3" class="todo-text">Pay electricity bill</label>
+                <button class="delete-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="var(--secondary-color)">
+                        <path
+                            d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
 
-            <div class="controls">
-                <div class="filters">
-                    <span id="all">All</span>
-                    <span id="pending">Pending</span>
-                    <span id="completed">Completed</span>
-                </div>
-                <button class="clear-btn">Clear All</button>
 
-                <ul class="task-box">
-                    <li class="task">
-                        <label for="1">
-                            <input type="checkbox" id="1">
-                     <p>My first task</p>
-                        </label>
-
-                        <div class="settings">
-                            <i class="uil uil-ellipsis-h"></i>
-                            <ul class="task-menu">
-                                <li>Edit</li>
-                                <li>Delete</li>
-                            </ul>
-                     
-                    </li>
-                    <li class="task">
-                        <label for="2">
-                            <input type="checkbox" id="2">
-                     <p>My second task</p>
-                        </label>
-
-                        <div class="settings">
-                            <i class="uil uil-ellipsis-h"></i>
-                            <ul class="task-menu">
-                                <li>Edit</li>
-                                <li>Delete</li>
-                            </ul>
-                     
-                    </li>
-                    <li class="task">
-                        <label for="3">
-                            <input type="checkbox" id="3">
-                     <p>My third task</p>
-                        </label>
-
-                        <div class="settings">
-                            <i class="uil uil-ellipsis-h"></i>
-                            <ul class="task-menu">
-                                <li>Edit</li>
-                                <li>Delete</li>
-                            </ul>
-                     
-                    </li>
-                    <li class="task">
-                        <label for="4">
-                            <input type="checkbox" id="4">
-                     <p>My fourth task</p>
-                        </label>
-
-                        <div class="settings">
-                            <i class="uil uil-ellipsis-h"></i>
-                            <ul class="task-menu">
-                                <li>Edit</li>
-                                <li>Delete</li>
-                            </ul>
-                     
-                    </li>
-                </ul>
 </body>
+
 </html>
