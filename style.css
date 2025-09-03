@@ -181,7 +181,6 @@ input[type="checkbox"] {
     color: var(--text-color);
     background: var(--primary-color);
     margin-right: 5px;
-    transition: 200ms ease;
 }
 
 .save-edit-button,
@@ -204,6 +203,7 @@ input[type="checkbox"] {
 
 .save-edit-button:hover {
     background-color: var(--faded-accent);
+    transition: 200ms ease;
 }
 
 .cancel-edit-button {
@@ -214,6 +214,7 @@ input[type="checkbox"] {
 .cancel-edit-button:hover {
     background-color: var(--accent-color);
     color: var(--background);
+    transition: 200ms ease;
 }
 
 @media (max-width: 500px) {
