@@ -61,6 +61,11 @@ function createTodoItem(todo, todoIndex) {
        deleteTodoItems(todoIndex);
     });
 
+const editButton = todoLI.querySelector('.edit-button');
+    editButton.addEventListener('click', () => {
+        enableEditMode(todoLI, todo, todoIndex);
+    });
+
     const checkbox = todoLI.querySelector("input");
     checkbox.addEventListener("change", () => {
        allTodos[todoIndex].completed = checkbox.checked;
@@ -84,4 +89,31 @@ function saveTodos() {
 function getTodos() {
    const todos = localStorage.getItem('todos') || "[]";
   return JSON.parse(todos);
+}
+
+function enableEditMode(todoLI, todo, todoIndex) {
+    const currentText = todo.text;
+    todoLI.innerHTML = `
+        <input type="checkbox" id="todo-${todoIndex}" ${todo.completed ? "checked" : ""} style="display:none;">
+        <input type="text" class="edit-input" value="${currentText}" style="flex-grow:1; padding:10px;">
+        <button class="save-edit-button">Save</button>
+        <button class="cancel-edit-button">Cancel</button>
+    `;
+
+    const saveBtn = todoLI.querySelector('.save-edit-button');
+    const cancelBtn = todoLI.querySelector('.cancel-edit-button');
+    const editInput = todoLI.querySelector('.edit-input');
+
+    saveBtn.addEventListener('click', () => {
+        const newText = editInput.value.trim();
+        if (newText.length > 0) {
+            allTodos[todoIndex].text = newText;
+            saveTodos();
+            updateTodoList();
+        }
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        updateTodoList();
+    });
 }

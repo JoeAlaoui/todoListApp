@@ -1,10 +1,18 @@
 :root {
-    --background: #101114;
-    --primary-color: #1C1D20;
-    --secondary-color: #4a4d57;
-    --accent-color: #00ffc4;
-    --faded-accent: #00ffc4aa;
-    --text-color: #f9f9f9;
+    --background: #f7fafc;
+    /* very light gray-blue */
+    --primary-color: #ffffff;
+    /* pure white for cards */
+    --secondary-color: #b2d8e6;
+    /* more visible soft blue */
+    --accent-color: #38b2ac;
+    /* soft teal for accents */
+    --faded-accent: #38b2ac88;
+    /* more visible faded teal */
+    --text-color: #1a202c;
+    /* dark gray for strong contrast */
+    --edit-color: #a78bfa;
+    /* soft purple for edit button */
 }
 
 * {
@@ -82,7 +90,7 @@ form {
 }
 
 #add-button:hover {
-    background-color:var(--accent-color);
+    background-color: var(--accent-color);
     transition: 200ms ease;
 }
 
@@ -107,7 +115,8 @@ form {
     transition: 200ms ease;
 }
 
-.delete-button, .edit-button {
+.delete-button,
+.edit-button {
     padding: 3px;
     background: none;
     border: none;
@@ -117,7 +126,8 @@ form {
     cursor: pointer;
 }
 
-.delete-button svg, .edit-button svg {
+.delete-button svg,
+.edit-button svg {
     transition: 200ms ease;
 }
 
@@ -126,7 +136,7 @@ form {
 }
 
 .edit-button:hover svg {
-    fill: skyblue;
+    fill: var(--edit-color);
 }
 
 .custom-checkbox {
@@ -162,6 +172,50 @@ input[type="checkbox"] {
     display: none;
 }
 
+.edit-input {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--text-color);
+    background: var(--primary-color);
+    margin-right: 5px;
+    transition: 200ms ease;
+}
+
+.save-edit-button,
+.cancel-edit-button {
+    padding: 0 15px;
+    height: 35px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 3px;
+    transition: 200ms ease;
+}
+
+.save-edit-button {
+    background-color: var(--accent-color);
+    color: var(--background);
+}
+
+.save-edit-button:hover {
+    background-color: var(--faded-accent);
+}
+
+.cancel-edit-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.cancel-edit-button:hover {
+    background-color: var(--accent-color);
+    color: var(--background);
+}
+
 @media (max-width: 500px) {
     html {
         font-size: 12pt;
@@ -178,5 +232,21 @@ input[type="checkbox"] {
     h1 {
         margin-top: 50px;
         font-size: 15vw;
+    }
+
+    .edit-input {
+        padding: 10px;
+        font-size: 1em;
+        margin-right: 0;
+    }
+
+    .save-edit-button,
+    .cancel-edit-button {
+        width: 100%;
+        margin: 5px 0 0 0;
+        padding: 12px 0;
+        height: auto;
+        font-size: 1em;
+        border-radius: 1000px;
     }
 }
